@@ -11,7 +11,7 @@
  *  706
  *  60
  *  5
- * Here we noticed that in every column, print value 2 times
+ *  Here we noticed that in every column, print value 2 times
  */
 
 #include<iostream>
