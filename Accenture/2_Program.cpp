@@ -63,6 +63,30 @@ int OperationsBinaryString(char* str) {
     return res;
 }
 
+int OperationsBinaryString2(char* str) {
+    if (str == nullptr) return -1;
+    int res = *str - '0'; // str[0] - '0'
+    str++;
+    while(*str != '\0') {
+        char ch = *str;
+        str++;
+        int digit = *str - '0';
+        switch(ch) {
+            case 'A': 
+                res &= digit; 
+                break; 
+            case 'B': 
+                res |= digit; 
+                break; 
+            case 'C': 
+                res ^= digit; 
+                break; 
+        }
+        str++;
+    }
+    return res;
+}
+
 int main() {
     char *str = new char;
     // int n; cin>>n; // no of character in a string
@@ -75,5 +99,7 @@ int main() {
     // char *str = &s[0];
     
     cout<<"\n"<<OperationsBinaryString(str);
+    cout<<"\n"<<OperationsBinaryString2(str);
+
     return 0;
 }
