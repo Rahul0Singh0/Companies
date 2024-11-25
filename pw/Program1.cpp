@@ -28,16 +28,29 @@
 using namespace std;
 
 // O(N^3)  TLE
+// vector<string> substrings(string& str) {
+//     vector<string> res;
+//     for (int i = 0; i < str.size(); i++) {
+//         for(int j = i; j < str.size(); j++) {
+//         string s = "";
+//             // for(int k = i; k <= j; k++) {
+//             //     s += str[k];
+//             // } 
+//         s = str.substr(i, j);
+//         res.push_back(s);
+//         }
+//     }
+//     return res;
+// }
+
+// Time : O(N^2)
 vector<string> substrings(string& str) {
     vector<string> res;
     for (int i = 0; i < str.size(); i++) {
-        for(int j = i; j < str.size(); j++) {
         string s = "";
-            // for(int k = i; k <= j; k++) {
-            //     s += str[k];
-            // } 
-        s = str.substr(i, j);
-        res.push_back(s);
+        for(int j = i; j < str.size(); j++) {
+            s += str[j];
+            res.push_back(s);
         }
     }
     return res;
